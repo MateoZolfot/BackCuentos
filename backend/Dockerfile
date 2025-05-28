@@ -14,9 +14,17 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# ---- descarga pesos y categorías aquí ----
+# (se queda en /app/models dentro de la imagen)
+RUN mkdir -p /app/models && \
+    wget -q http://places2.csail.mit.edu/models_places365/resnet18_places365.pth.tar \
+        -O /app/models/resnet18_places365.pth.tar && \
+    wget -q https://raw.githubusercontent.com/csailvision/places365/master/categories_places365.txt \
+        -O /app/models/categories_places365.txt
+
 # Copia el resto de la fuente
 COPY app ./app
-COPY models ./backend/models
+
 
 # Variables de entorno (puedes sobreescribirlas en docker-compose)
 ENV OPENAI_API_KEY=""
