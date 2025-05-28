@@ -23,7 +23,7 @@ RUN mkdir -p /app/models && \
         -O /app/models/categories_places365.txt
 
 # Copia el resto de la fuente
-COPY app ./backend/app
+COPY app ./app
 
 
 # Variables de entorno (puedes sobreescribirlas en docker-compose)
