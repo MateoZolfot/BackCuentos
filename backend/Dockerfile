@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copia el resto de la fuente
 COPY app ./app
-COPY models ./models
+COPY models ./backend/models
 
 # Variables de entorno (puedes sobreescribirlas en docker-compose)
 ENV OPENAI_API_KEY=""
