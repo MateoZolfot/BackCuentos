@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: BackCuentos
+    env: docker
+    rootDir: backend           # <-- Render se meterá ahí antes de construir
+    plan: free
