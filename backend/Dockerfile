@@ -11,7 +11,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y --no-install-reco
     rm -rf /var/lib/apt/lists/*
 
 # Copia requisitos y los instala primero (mejor capa de cache)
-COPY requirements.txt ./requirements
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # ---- descarga pesos y categorías aquí ----
