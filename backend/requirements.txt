@@ -1,0 +1,8 @@
+fastapi==0.111.0
+uvicorn[standard]
+pydantic==2.7.1
+python-multipart==0.0.9         # para UploadFile
+pillow==10.3.0
+torch==2.3.0                      # CPU only (≈180 MB de capa base)
+torchvision==0.18.0
+openai==1.25.0
